@@ -17,5 +17,6 @@ while True:
 	getData()
 	if not data:
 		continue
-	print data, str(len(data))
+	leng = len(data)
+	print str(leng)
 	

@@ -63,3 +63,14 @@ int main(){
 	
 	return 0;
 }
+
+	/*
+	// To test transmission over connection:
+	buf[0] = 0xFA;
+	buf[1] = 33;
+	buf[2] = 33;
+	buf[3] = 33;
+	send(client, send_buffer, 724, 0);
+	
+	return 0;
+	*/
