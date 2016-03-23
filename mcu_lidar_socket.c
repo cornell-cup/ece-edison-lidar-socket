@@ -38,10 +38,6 @@ int getHeader(void){
 			if (buf[0] == 0xFA){
 				read(fid, buf, 1);
 				if (buf[0] == 0xFA){
-					buf[0] = 0xFA;
-					buf[1] = 0xFA;
-					buf[2] = 0xFA;
-					buf[3] = 0xFA;
 					return 1;
 				}
 			}
