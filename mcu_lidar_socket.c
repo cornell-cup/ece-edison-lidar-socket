@@ -14,6 +14,9 @@
 
 #include "mraa.h"
 
+#define TCP_IP "192.168.4.9"
+#define TCP_PORT 12345
+
 uint8_t buf[20];
 volatile int fid;
 volatile int client;
@@ -65,8 +68,8 @@ int main(){
 	struct sockaddr_in addr; // http://man7.org/linux/man-pages/man7/ip.7.html
 	memset(&addr, 0, sizeof(addr));                /* zero the struct */ // https://en.wikibooks.org/wiki/C_Programming/Networking_in_UNIX
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(5005);
-	addr.sin_addr.s_addr = inet_addr("192.168.4.206"); // https://en.wikibooks.org/wiki/C_Programming/Networking_in_UNIX
+	addr.sin_port = htons(TCP_PORT);
+	addr.sin_addr.s_addr = inet_addr(TCP_IP); // https://en.wikibooks.org/wiki/C_Programming/Networking_in_UNIX
 	if (connect(client, (struct sockaddr*) &addr, sizeof(addr)) <0){
 		fprintf(stderr, "Failed to connect to socket!\n");
 		return -1;
