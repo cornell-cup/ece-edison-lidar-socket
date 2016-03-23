@@ -102,7 +102,6 @@ int main(){
 				return -1;
 			}
 			send(client, send_buffer, 724, 0);
-			
 		}
 	}
 	
